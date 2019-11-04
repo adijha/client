@@ -2,8 +2,41 @@ import React from 'react';
 import Navbar from './components/Navbar';
 
 import './App.css';
+import { visible } from 'ansi-colors';
 function App() {
+ 
+ 
+ 
+const validate = (e) => {
+  let text = document.getElementById("admin-phone").value;
+
+  let regx = /^[6-9][0-9]{9}$/;
+  if (regx.test(text)) {
+    document.getElementById("lbltext").innerHTML =  "all okay";
+    document.getElementById("lbltext").style.display ="block"
+    document.getElementById("lbltext").style.color = "green";
+  }
+  else {
+    document.getElementById("lbltext").innerHTML = "Mobile no. is invalid Valid";
+    document.getElementById("lbltext").style.display ="block"
+    document.getElementById("lbltext").style.color = "red";
+  }
+
+}
+ 
+ 
+ 
+ 
   return (
+
+
+
+
+
+
+
+
+
     <>
       <Navbar/>
 		<div className="container-fluid">
@@ -31,7 +64,10 @@ function App() {
       </div>
       <div className="col-md-4 admin2 mr-2 gray">
         <label htmlFor="input">Admin Phone No:</label> <br />
-        <input type="text" name="admin no" />
+              <input type="number" size="10" id="admin-phone" name="admin no"
+              placeholder="Type Number"
+              />
+              <p id="lbltext" style={{ color: "red",display: 'none'}} >Invalid</p>
       </div>
       <div className="col-md-3 licence ml-5  px-2 gray">
         <br />
@@ -163,7 +199,7 @@ function App() {
       </div>
       <div className="col-md-7 admin2 mr-2 gray">
         <label htmlFor="input">Sender ID:</label>
-        <input className="mx-5" type="text" name="sender id" />
+        <input className="mx-5" autoCapitalize='true' type="text" name="sender id" maxLength={6} />
         <br />
         <br />
         <p>
@@ -183,7 +219,7 @@ function App() {
           <li>Sender ID will be maximum of 6 Characters.</li>
         </ul>
         <p />
-        <button type="submit" className>
+        <button type="submit" onClick={validate}  className>
           Save
         </button>
       </div>
