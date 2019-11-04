@@ -1,0 +1,39 @@
+body {
+	background-color: #ebeef0;
+}
+.App {
+	text-align: center;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+#sms,
+#admin,
+#sender,
+.admin,
+.admin2,
+.licence {
+	padding: 1%;
+}
+
+.sms {
+	background-color: gold;
+	padding: 1%;
+}
+
+.buy {
+	background-color: green;
+	padding: 1%;
+}
+
+.country {
+	background-color: blueviolet;
+	padding: 1%;
+}
+
+.gray {
+	background-color: #fff;
+}
